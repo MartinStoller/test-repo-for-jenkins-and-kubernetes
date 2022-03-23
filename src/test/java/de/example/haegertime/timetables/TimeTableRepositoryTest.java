@@ -1,4 +1,4 @@
-package de.example.haegertime.timetables;
+/*package de.example.haegertime.timetables;
 
 import de.example.haegertime.customer.Customer;
 import de.example.haegertime.customer.CustomerRepository;
@@ -47,9 +47,9 @@ class TimeTableRepositoryTest {
     @AfterEach
     void tearDown(){
         testedTTDRepository.deleteAll();
-    }
+    }*/
 
-    @Test
+/*    @Test
     void shouldGetTimeTableDayByEmployeeId() {
 
         //Expected project:
@@ -90,9 +90,9 @@ class TimeTableRepositoryTest {
 
         //then
         assertEquals(expected, returned);
-    }
+    }*/
 
-    @Test
+/*    @Test
     void shouldGetAllWorkdaysWhereAbsenceStatusIsHOLIDAYAndDateIsAsGiven() {
         //Expected project:
         Project proj2 = new Project("WebAppXY Extension", LocalDate.of(1992, Month.JULY, 13), null);
@@ -144,5 +144,7 @@ class TimeTableRepositoryTest {
         List<TimeTableDay> actual = testedTTDRepository.getAllSickdaysOnDate(LocalDate.of(2022, Month.JANUARY, 3));
 
         assertEquals(expected, actual);
-    }
-}
+    }*/
+
+/*
+}*/

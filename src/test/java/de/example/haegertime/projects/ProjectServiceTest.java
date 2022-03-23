@@ -94,7 +94,7 @@ class ProjectServiceTest {
                         " nicht in der DB");
     }
 
-    @Test
+/*    @Test
     void updateProjectTitleAlreadyExists() {
         //given
         Project project = new Project("ABC", LocalDate.of(2022, Month.JANUARY, 3), null);
@@ -107,7 +107,7 @@ class ProjectServiceTest {
                 .isInstanceOf(ItemAlreadyExistsException.class)
                 .hasMessageContaining("Ein Projekt mit Title "+project.getTitle()
                         +" ist vorhanden in der DB");
-    }
+    }*/
 
     @Test
     void itShouldExistsProjectByIdAndCustomerId() {

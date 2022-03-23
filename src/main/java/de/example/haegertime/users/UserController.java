@@ -154,7 +154,7 @@ public class UserController {
      */
     @PutMapping("/update/username/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<User> changeUserName(Long id, @RequestParam("email") String newUserName) {
+    public ResponseEntity<User> changeUserName(@PathVariable Long id, @RequestParam("email") String newUserName) {
         return ResponseEntity.ok(userService.updateUserName(id, newUserName));
     }
 
