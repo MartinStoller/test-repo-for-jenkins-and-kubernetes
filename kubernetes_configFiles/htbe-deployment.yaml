@@ -1,0 +1,24 @@
+# If an error occurs while saving, this file will be
+# reopened with the relevant failures.
+#
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: htbe-depl
+  name: htbe-depl
+spec: # deployment-spec
+  replicas: 1
+  selector:
+    matchLabels:
+      app: htbe-depl
+  template:
+    metadata:
+      labels:
+        app: htbe-depl
+    spec: #  pod-spec
+      containers:
+      - image: haegertime-backend:0.0.1
+        name: haegertime-backend
+        ports:
+        - containerPort: 8080

@@ -1,0 +1,44 @@
+# Yaml allows also for 2 Files in 1 File by seperating via "---":
+#DeploymentFile
+#---
+#ServiceFile
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: htfe
+  name: htfe
+spec: # deployment-spec
+  replicas: 2
+  selector:
+    matchLabels:
+      app: htfe
+  template:
+    metadata:
+      labels:
+        app: htfe
+    spec: #  pod-spec
+      containers:
+        - image: public.ecr.aws/r1p7l8l4/htfe:latest
+          name: htfe
+          resources:
+            requests:
+              memory: "300Mi"
+            limits:
+              memory: "900Mi"
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: htfe-service
+spec:
+  selector:
+    app: htfe
+  type: LoadBalancer #accepts external requests by assigning the service an external IP
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 31000 #Port where external IP address will be open (needs to be between 30000 and 32767)
